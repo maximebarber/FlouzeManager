@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <!-- Formulaire d'ajout d'une opération -->
-<form>
+<form method="POST">
 
     <div class="form-group">
         <input type="date" class="form-control" name="date">
@@ -65,7 +65,7 @@
     </div>
 
     <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="fixe" name="fixe">
+        <input type="checkbox" class="form-check-input" id="fixe" name="fixe" value="1">
         <label class="form-check-label" for="fixe">Dépense fixe</label>
     </div>
 
