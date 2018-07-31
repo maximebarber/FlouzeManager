@@ -22,3 +22,7 @@ function operation($data = null) {
     $comptes = getCompteBancaire();
     require 'View/vueAddOperation.php';
 }
+
+function erreur($msgErreur) {
+    require 'View/vueErreur.php';
+}
