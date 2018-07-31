@@ -7,12 +7,12 @@
 
     <table border="1">
         <thead>
-        <th>Date</th>
-        <th>Libellé</th>
-        <th>Type</th>
-        <th>Catégorie</th>
-        <th>Débit</th>
-        <th>Crédit</th>
+            <th>Date</th>
+            <th>Libellé</th>
+            <th>Type</th>
+            <th>Catégorie</th>
+            <th>Débit</th>
+            <th>Crédit</th>
         </thead>
 
         <!-- Récupère les données stockées dans la BDD -->
