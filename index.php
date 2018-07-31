@@ -9,9 +9,8 @@ require 'Model/ModelOperation.php';
 //On affiche la page 'Opérations'
 try {
     $operations = getOperations();
-    require 'View/vueOperations.php';
-} 
-catch (Exception $e) {
+    require 'View/vueGetOperations.php';
+} catch (Exception $e) {
     $msgErreur = $e->getMessage();
     require 'View/vueErreur.php';
 }
