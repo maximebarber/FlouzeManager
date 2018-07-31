@@ -41,6 +41,36 @@ function getOperations() {
     return $operations;
 }
 
+
+function soldeCourant() {
+  $bdd = getBdd();
+
+  //Récupère les données permettant de calculer le solde courant
+  $sql = "SELECT montant_operation, nature_operation FROM OPERATION";
+  $montants = $bdd->query($sql);
+
+  //Calcul du solde courant
+  $credit = 0;
+  $debit  = 0;
+
+  //Calcul selon la nature de l'opération
+  foreach ($montants as $montant) {
+      switch($montant['nature_operation']){
+        case 'C':
+            $credit = $credit + $montant['montant_operation'];
+            break;
+        case 'D':
+            $debit = $debit + $montant['montant_operation'];
+            break;
+  }
+}
+
+$solde = $credit - $debit;
+
+//Affichage du solde courant
+return $solde;
+}
+
 //Insère une opération dans la BDD
 function addOperation($data = null) {
     $bdd = getBdd();

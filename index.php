@@ -9,6 +9,7 @@ require 'Model/ModelOperation.php';
 //On affiche la page 'Opérations'
 try {
     $operations = getOperations();
+    $solde = soldeCourant();
     require 'View/vueGetOperations.php';
 } catch (Exception $e) {
     $msgErreur = $e->getMessage();

@@ -2,6 +2,10 @@
 
 <?php ob_start(); ?>
 
+<!-- Affiche le solde courant -->
+
+<h3>Solde Courant : <?= $solde; ?> €</h3>
+
 <!-- Affiche le récapitulaif des opérations -->
 
 <table border="1">
