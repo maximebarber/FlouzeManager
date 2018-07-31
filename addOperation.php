@@ -6,6 +6,7 @@ error_reporting(E_ALL | E_STRICT);
 
 require 'Model/ModelOperation.php';
 require 'Model/ModelType.php';
+require 'Model/ModelCategorie.php';
 
 //On affiche la page 'Ajout opération'
 try {
@@ -18,6 +19,7 @@ try {
     //affichage du formlaire
     else {
         $types = getTypeOperation();
+        $categories = getCategorieOperation();
         require 'View/vueAddOperation.php';
     }
 } catch (Exception $e) {
