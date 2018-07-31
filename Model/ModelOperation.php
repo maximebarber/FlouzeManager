@@ -26,7 +26,8 @@
 //Connection à la BDD
 function getBdd()
 {
-    $bdd = new PDO('mysql:host=phpmyadmin.elan-formation.eu;dbname=maxime_gestion_budget;charset=utf8', 'm_barber', 'elanformation67');
+    $bdd = new PDO('mysql:host=phpmyadmin.elan-formation.eu;dbname=maxime_gestion_budget;charset=utf8',
+                   'm_barber', 'elanformation67', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     return $bdd;
 }
 
