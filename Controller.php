@@ -23,6 +23,7 @@ function operation($data = null) {
     require 'View/vueAddOperation.php';
 }
 
+//Affichage de la page d'erreur
 function erreur($msgErreur) {
     require 'View/vueErreur.php';
 }
