@@ -7,6 +7,7 @@ error_reporting(E_ALL | E_STRICT);
 require 'Model/ModelOperation.php';
 require 'Model/ModelType.php';
 require 'Model/ModelCategorie.php';
+require 'Model/ModelCompteBancaire.php';
 
 //On affiche la page 'Ajout opération'
 try {
@@ -20,6 +21,7 @@ try {
     else {
         $types = getTypeOperation();
         $categories = getCategorieOperation();
+        $comptes = getCompteBancaire();
         require 'View/vueAddOperation.php';
     }
 } catch (Exception $e) {

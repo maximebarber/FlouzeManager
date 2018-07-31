@@ -35,7 +35,7 @@
 
             <!-- Récupère les données de chaque CATEGORIE sous forme d'une liste déroulante -->
             <?php foreach ($categories as $categorie): ?>
-            <option value="<?= $categorie["id_categorie_operation"] ?>"><?= $categorie["nom_categorie_operation"] ?></option>
+                <option value="<?= $categorie["id_categorie_operation"] ?>"><?= $categorie["nom_categorie_operation"] ?></option>
             <?php endforeach; ?>
 
         </select>
@@ -44,11 +44,12 @@
     <div class="form-group">
         <label for="categorie">Compte Bancaire</label>
         <select class="form-control" id="categorie" name="id_compte_bancaire">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+
+            <!-- Récupère les données de chaque CATEGORIE sous forme d'une liste déroulante -->
+            <?php foreach ($comptes as $compte): ?>
+                <option value="<?= $compte["id_compte_bancaire"] ?>"><?= $compte["numero_compte_bancaire"] ?></option>
+            <?php endforeach; ?>
+
         </select>
     </div>
 
