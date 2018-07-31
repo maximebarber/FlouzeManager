@@ -4,26 +4,22 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL | E_STRICT);
 
-require 'Model/ModelOperation.php';
-require 'Model/ModelType.php';
-require 'Model/ModelCategorie.php';
-require 'Model/ModelCompteBancaire.php';
+require 'Controller.php';
 
-//On affiche la page 'Ajout opération'
+//Affichage de la page 'Ajout opération'
 try {
 
+    //Si les champs ne sont pas vides ils sont insérés dans la BDD
     if (!empty($_POST)) {
 
-        addOperation($_POST);
+        operation($_POST);
     }
 
-    //affichage du formlaire
+    //Sinon on affiche uniquement le formulaire
     else {
-        $types = getTypeOperation();
-        $categories = getCategorieOperation();
-        $comptes = getCompteBancaire();
-        require 'View/vueAddOperation.php';
+        operation();
     }
+
 } catch (Exception $e) {
     $msgErreur = $e->getMessage();
     require 'View/vueErreur.php';
