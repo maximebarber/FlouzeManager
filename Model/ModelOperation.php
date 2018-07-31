@@ -50,6 +50,7 @@ function soldeCourant() {
   $montants = $bdd->query($sql);
 
   //Calcul du solde courant
+  
   $credit = 0;
   $debit  = 0;
 
