@@ -1,5 +1,6 @@
 <?php
 
+//Affichage liste déroulante types d'opération
 function getTypeOperation() {
     $bdd = getBdd();
 

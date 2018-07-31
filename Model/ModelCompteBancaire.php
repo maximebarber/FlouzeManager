@@ -1,5 +1,6 @@
 <?php
 
+//Affichage liste déroulante des comptes bancaires
 function getCompteBancaire() {
     $bdd = getBdd();
 

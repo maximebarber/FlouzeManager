@@ -1,5 +1,6 @@
 <?php
 
+//Affichage liste déroulante catégories d'opération
 function getCategorieOperation() {
     $bdd = getBdd();
 

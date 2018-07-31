@@ -45,7 +45,7 @@
         <label for="categorie">Compte Bancaire</label>
         <select class="form-control" id="categorie" name="id_compte_bancaire">
 
-            <!-- Récupère les données de chaque CATEGORIE sous forme d'une liste déroulante -->
+            <!-- Récupère les données de chaque COMPTE BANCAIRE sous forme d'une liste déroulante -->
             <?php foreach ($comptes as $compte): ?>
                 <option value="<?= $compte["id_compte_bancaire"] ?>"><?= $compte["numero_compte_bancaire"] ?></option>
             <?php endforeach; ?>
@@ -65,6 +65,7 @@
     </div>
 
     <div class="form-group form-check">
+        <input type="hidden" value="0" name="fixe">
         <input type="checkbox" class="form-check-input" id="fixe" name="fixe" value="1">
         <label class="form-check-label" for="fixe">Dépense fixe</label>
     </div>
@@ -76,4 +77,3 @@
 <?php $contenu = ob_get_clean(); ?>
 
 <?php require 'template.php'; ?>
-
