@@ -13,5 +13,5 @@ try {
 } 
 catch (Exception $e) {
     $msgErreur = $e->getMessage();
-    require 'vueErreur.php';
+    require 'View/vueErreur.php';
 }
