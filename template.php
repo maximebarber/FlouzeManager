@@ -5,6 +5,8 @@
         <meta charset="UTF-8" />
         <!-- CSS maison -->
         <link rel="stylesheet" href="CSS/style.css" />
+        <!-- Responsive meta tag -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- CSS Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <title><?= $titre ?></title>   <!-- Élément spécifique -->
@@ -24,10 +26,10 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action='operations'">Opérations <!--<span class="sr-only">(current)</span>--></a>
+                                <a class="nav-link" href="index.php?action=operations">Opérations <!--<span class="sr-only">(current)</span>--></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action='addOperation'">Ajout opération</a>
+                                <a class="nav-link" href="index.php?action=addOperation">Ajout opération</a>
                             </li>
                         </ul>
                     </div>
