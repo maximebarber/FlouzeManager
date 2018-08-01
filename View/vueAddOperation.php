@@ -1,6 +1,6 @@
-<?php $titre = 'Ajout opération' ?>
+<?php $this->titre = 'Ajout opération' ?>
 
-<?php ob_start(); ?>
+<?php //ob_start(); ?>
 
 <!-- Formulaire d'ajout d'une opération -->
 <form method="POST">
@@ -82,6 +82,6 @@
 
 </form>
 
-<?php $contenu = ob_get_clean(); ?>
+<?php //$contenu = ob_get_clean(); ?>
 
-<?php require 'View/template.php'; ?>
+<?php //require 'View/template.php'; ?>

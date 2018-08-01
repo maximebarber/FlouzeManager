@@ -1,4 +1,4 @@
-<?php
+<?php/*
 
 require 'Model/ModelOperation.php';
 require 'Model/ModelType.php';
@@ -15,16 +15,21 @@ function operations() {
 
 //Affichage du formulaire
 function operation($data = null) {
+    $modelOperation = new ModelOperation;
+    $modelType = new ModelType;
+    $modelCategorie = new ModelCategorie;
+    $modelCompteBancaire = new ModelCompteBancaire;
+    
     if(isset($data)){
-        addOperation($data);
+        $modelOperation->addOperation($data);
     }
-    $types = getTypeOperation();
-    $categories = getCategorieOperation();
-    $comptes = getCompteBancaire();
+    $types = $modelType->getTypeOperation();
+    $categories = $modelCategorie->getCategorieOperation();
+    $comptes = $modelCompteBancaire->getCompteBancaire();
     require 'View/vueAddOperation.php';
 }
 
 //Affichage de la page d'erreur
 function erreur($msgErreur) {
     require 'View/vueErreur.php';
-}
+}*/

@@ -26,10 +26,10 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action=operations">Opérations <!--<span class="sr-only">(current)</span>--></a>
+                                <a class="nav-link" href="index.php?action=GetOperations">Opérations <!--<span class="sr-only">(current)</span>--></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action=addOperation">Ajout opération</a>
+                                <a class="nav-link" href="index.php?action=AddOperation">Ajout opération</a>
                             </li>
                         </ul>
                     </div>

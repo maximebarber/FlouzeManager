@@ -1,6 +1,6 @@
-<?php $titre = 'Opérations' ?>
+<?php $this->titre = 'Opérations' ?>
 
-<?php ob_start(); ?>
+<?php //ob_start(); ?>
 
 <!-- Affiche le solde courant -->
 
@@ -47,6 +47,6 @@
 
 </table>
 
-<?php $contenu = ob_get_clean(); ?>
+<?php //$contenu = ob_get_clean(); ?>
 
-<?php require 'View/template.php'; ?>
+<?php //require 'View/template.php'; ?>
