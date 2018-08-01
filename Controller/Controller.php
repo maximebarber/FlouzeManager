@@ -7,8 +7,9 @@ require 'Model/ModelCompteBancaire.php';
 
 //Affichage des opérations et du solde courant
 function operations() {
-    $operations = getOperations();
-    $solde = soldeCourant();
+    $modelOperation = new ModelOperation;
+    $operations = $modelOperation->getOperations();
+    $solde = $modelOperation->soldeCourant();
     require 'View/vueGetOperations.php';
 }
 

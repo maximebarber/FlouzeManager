@@ -1,11 +1,19 @@
 <?php
 
-//Affichage liste déroulante types d'opération
-function getTypeOperation() {
-    $bdd = getBdd();
+class ModelType extends Model {
 
-    $sql   = "SELECT * FROM TYPE_OPERATION";
-    $types = $bdd->query($sql);
+    //Connexion à la BDD
+    public function __construct() {
+        parent::getBdd();
+    }
 
-    return $types;
+    //Affichage liste déroulante types d'opération
+    function getTypeOperation() {
+
+        $sql   = "SELECT * FROM TYPE_OPERATION";
+        $types = $this->bdd->query($sql);
+
+        return $types;
+    }
+
 }

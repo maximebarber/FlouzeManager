@@ -1,11 +1,21 @@
 <?php
 
-//Affichage liste déroulante des comptes bancaires
-function getCompteBancaire() {
-    $bdd = getBdd();
+require_once 'Model/Model.php';
 
-    $sql   = "SELECT * FROM COMPTE_BANCAIRE";
-    $comptes = $bdd->query($sql);
+class ModelCompteBancaire extends Model {
+    
+    //Connexion à la BDD
+    public function __construct() {
+        parent::getBdd();
+    }
 
-    return $comptes;
+    //Affichage liste déroulante des comptes bancaires
+    function getCompteBancaire() {
+
+        $sql     = "SELECT * FROM COMPTE_BANCAIRE";
+        $comptes = $this->bdd->query($sql);
+
+        return $comptes;
+    }
+
 }

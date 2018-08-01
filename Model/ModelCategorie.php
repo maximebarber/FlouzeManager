@@ -1,11 +1,20 @@
 <?php
 
-//Affichage liste déroulante catégories d'opération
-function getCategorieOperation() {
-    $bdd = getBdd();
+require_once 'Model/Model.php';
 
-    $sql   = "SELECT * FROM CATEGORIE_OPERATION";
-    $categories = $bdd->query($sql);
+class ModelCategorie extends Model {
+    
+    //Connexion à la BDD
+    public function __construct() {
+        parent::getBdd();
+    }
 
-    return $categories;
+    //Affichage liste déroulante catégories d'opération
+    function getCategorieOperation() {
+        $sql        = "SELECT * FROM CATEGORIE_OPERATION";
+        $categories = $this->bdd->query($sql);
+
+        return $categories;
+    }
+
 }
