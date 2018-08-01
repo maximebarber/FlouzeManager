@@ -1,7 +1,7 @@
 <?php $this->titre = 'Ajout opération' ?>
 
 <div class="alert alert-danger" role="alert">
-    <?= 'lol' ?>
+    <?= $msg; ?>
 </div>
 
 <!-- Formulaire d'ajout d'une opération -->

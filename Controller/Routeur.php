@@ -41,7 +41,7 @@ class Routeur {
                     case 'AddOperation':
 
                         //Vérification inputs vides
-                        $inputs = ['date', 'libelle', 'montant', 'type', 'categorie', 'compte', 'nature', 'fixe'];
+                        $inputs = ['date', 'libelle', 'montant', 'type', 'categorie', 'compte', 'nature'];
 
                         $erreur = false;
 
@@ -52,11 +52,12 @@ class Routeur {
                         }
 
                         //S'il n'y a pas d'inputs vides, AJOUT D'UNE OPERATION
-                        if (!$erreur) {
+                        if ($erreur) {
                             $this->ctrlAddOperation->addOperation($_POST);
-                            header("location: index.php?action=AddOperation");
+                            echo "ja";
                         } else {
                             $this->ctrlAddOperation->addOperation();
+                            echo "nein";
                         }
 
                         //AJOUT D'UN TYPE
@@ -78,10 +79,10 @@ class Routeur {
                         }
 
                         break;
-                        
+
                     //Affichage Chart.js
                     case 'Chart':
-                        
+
                         require_once 'View/vueChart.php';
 
                     //Affichage de la liste des opérations par défaut
