@@ -3,6 +3,7 @@
 require_once 'ControllerOperation.php';
 require_once 'ControllerAddOperation.php';
 require_once 'ControllerAddType.php';
+require_once 'ControllerAddCategorie.php';
 require_once 'View/Vue.php';
 
 class Routeur {
@@ -10,11 +11,13 @@ class Routeur {
     private $ctrlOperation;
     private $ctrlAddOperation;
     private $ctrlAddType;
+    private $ctrlAddCategorie;
 
     public function __construct() {
         $this->ctrlOperation    = new ControllerOperation();
         $this->ctrlAddOperation = new ControllerAddOperation();
         $this->ctrlAddType      = new ControllerAddType();
+        $this->ctrlAddCategorie = new ControllerAddCategorie();
     }
 
     public function routerRequete() {
@@ -36,12 +39,12 @@ class Routeur {
 
                     //Affichage formulaire ajout d'une opération
                     case 'AddOperation':
-                        
+
                         //Vérification inputs vides
                         $inputs = ['date', 'libelle', 'montant', 'type', 'categorie', 'compte', 'nature', 'fixe'];
 
                         $erreur = false;
-                        
+
                         foreach ($inputs as $input) {
                             if (empty($_POST[$input])) {
                                 $erreur = true;
@@ -62,6 +65,15 @@ class Routeur {
                             header("location: index.php?action=AddOperation");
                         } else {
                             $this->ctrlAddType->addTypeOperation();
+                        }
+
+                        //AJOUT D'UNE CATEGORIE
+                        if (!empty($_POST['addCategorie'])) {
+                            $nom_categorie_operation = $_POST['addCategorie'];
+                            $this->ctrlAddCategorie->addCategorieOperation($nom_categorie_operation);
+                            header("location: index.php?action=AddOperation");
+                        } else {
+                            $this->ctrlAddCategorie->addCategorieOperation();
                         }
 
                         break;

@@ -15,12 +15,11 @@ class ControllerAddType {
     //Ajout d'un type d'opération
     public function addTypeOperation($data = null) {
 
-        //addOperation() est appelé uniquement s'il y a un paramètre
+        //addTypeOperation() est appelé uniquement s'il y a un paramètre
         if (isset($data)) {
             $type = $this->type->addTypeOperation($data);
         }
 
-        //require 'View/vueAddOperation.php';
     }
 
 }

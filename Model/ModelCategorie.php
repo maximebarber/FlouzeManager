@@ -16,5 +16,19 @@ class ModelCategorie extends Model {
 
         return $categories;
     }
+    
+    //Ajout d'une catégorie dans la BDD
+    function addCategorieOperation($nom_categorie_operation) {
+        
+        $sql = "INSERT INTO CATEGORIE_OPERATION (nom_categorie_operation) "
+             . "VALUES (:nom_categorie_operation)";
+        $categorie = $this->bdd->prepare($sql);
+        
+        $categorie->execute([
+            'nom_categorie_operation' => $nom_categorie_operation
+        ]);
+        
+        return $categorie;
+    }
 
 }
