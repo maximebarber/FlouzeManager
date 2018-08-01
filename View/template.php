@@ -35,7 +35,7 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action=Chart">Statistiques</a>
+                                <a class="nav-link disabled" href="#">Statistiques (à venir)</a>
                             </li>
                             
                         </ul>

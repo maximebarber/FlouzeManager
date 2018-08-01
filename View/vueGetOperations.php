@@ -1,44 +1,45 @@
 <?php $this->titre = 'Opérations' ?>
 
-<h3>Solde Courant : <?= $solde; ?> €</h3>
+<h5>Solde Courant : <?= $solde; ?> €</h5>
 
 <!-- Affiche le récapitulaif des opérations -->
-
-<table border="1">
-    <thead>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
         <th>Date</th>
         <th>Libellé</th>
         <th>Type</th>
         <th>Catégorie</th>
         <th>Débit</th>
         <th>Crédit</th>
-    </thead>
+        </thead>
 
-    <!-- Récupère les données stockées dans la BDD -->
-    <?php foreach ($operations as $operation): ?>
+        <!-- Récupère les données stockées dans la BDD -->
+        <?php foreach ($operations as $operation): ?>
 
-        <tr>
+            <tr>
 
-            <td><?= $operation['date_operation'] ?></td>
-            <td><?= $operation['libelle_operation'] ?></td>
-            <td><?= $operation['nom_type_operation'] ?></td>
-            <td><?= $operation['nom_categorie_operation'] ?></td>
+                <td><?= $operation['date_operation'] ?></td>
+                <td><?= $operation['libelle_operation'] ?></td>
+                <td><?= $operation['nom_type_operation'] ?></td>
+                <td><?= $operation['nom_categorie_operation'] ?></td>
 
-            <!-- Affichage du montant de l'opération dans crédit ou débit -->
-            <?php if ($operation['nature_operation'] === 'D') { ?>
+                <!-- Affichage du montant de l'opération dans crédit ou débit -->
+                <?php if ($operation['nature_operation'] === 'D') { ?>
 
-                <td>- <?= $operation['montant_operation'] ?> €</td>
-                <td></td>
+                    <td>- <?= $operation['montant_operation'] ?> €</td>
+                    <td></td>
 
-            <?php } else { ?>
+                <?php } else { ?>
 
-                <td></td>
-                <td>+ <?= $operation['montant_operation'] ?> €</td>
+                    <td></td>
+                    <td>+ <?= $operation['montant_operation'] ?> €</td>
 
-            <?php } ?>
+                <?php } ?>
 
-        </tr>
+            </tr>
 
-    <?php endforeach; ?>
+        <?php endforeach; ?>
 
-</table>
+    </table>
+</div>
