@@ -1,3 +1,5 @@
+<?php require_once 'Controller/verificationsChamps.php' ?>
+
 <?php $this->titre = 'Opérations' ?>
 
 <h5>Solde Courant : <?= $solde; ?> €</h5>
@@ -27,13 +29,13 @@
                 <!-- Affichage du montant de l'opération dans crédit ou débit -->
                 <?php if ($operation['nature_operation'] === 'D') { ?>
 
-                    <td>- <?= $operation['montant_operation'] ?> €</td>
+                    <td>- <?= deuxDeciamles($operation['montant_operation']) ?> €</td>
                     <td></td>
 
                 <?php } else { ?>
 
                     <td></td>
-                    <td>+ <?= $operation['montant_operation'] ?> €</td>
+                    <td>+ <?= deuxDeciamles($operation['montant_operation']) ?> €</td>
 
                 <?php } ?>
 

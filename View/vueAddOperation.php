@@ -11,17 +11,18 @@
 
     <!-- Champ date -->
     <div class="form-group">
-        <input type="date" class="form-control" name="date" form="addOperation">
+        <input type="date" class="form-control" name="date" form="addOperation" required>
     </div>
 
     <!-- Champ libellé -->
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Libellé de l'opération" name="libelle" form="addOperation">
+        <input type="text" class="form-control" placeholder="Libellé de l'opération" name="libelle" form="addOperation" pattern="^[a-zéèàêâùïüëçA-Z]{3,50}$" required>
+        <small>Pas de caractères spéciaux. Entre 3 et 50 caractères.</small>
     </div>
 
     <!-- Champ montant -->
     <div class="form-group input-group">
-        <input type="number"class="form-control" placeholder="Montant de l'opération" name="montant" form="addOperation">
+        <input type="number"class="form-control" placeholder="Montant de l'opération" name="montant" form="addOperation" step="0.01" required>
         <div class="input-group-append">
             <span class="input-group-text" id="basic-addon2">€</span>
         </div>
