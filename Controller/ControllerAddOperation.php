@@ -34,14 +34,14 @@ class ControllerAddOperation {
         if ($data != null) {
             //Récupération des inputs de manière sécurisé
             $data = array(
-            'date'      => e($data['date']),
-            'libelle'   => e(capsLower($data['libelle'])),
-            'montant'   => e(deuxDecimales($data['montant'])),
-            'type'      => e($data['id_type']),
-            'categorie' => e($data['id_categorie']),
-            'compte'    => e($data['id_compte_bancaire']),
-            'nature'    => e(capsUpper($data['nature'])),
-            'fixe'      => e($data['fixe']));
+            'date'      => escape($data['date']),
+            'libelle'   => escape(capsLower($data['libelle'])),
+            'montant'   => escape($data['montant']),
+            'type'      => escape($data['id_type']),
+            'categorie' => escape($data['id_categorie']),
+            'compte'    => escape($data['id_compte_bancaire']),
+            'nature'    => escape(capsUpper($data['nature'])),
+            'fixe'      => escape($data['fixe']));
 
             //ERREUR SI CHAMP VIDE
             if (empty($data['date']) || empty($data['libelle']) ||

@@ -1,4 +1,4 @@
-<?php require_once 'Controller/verificationsChamps.php' ?>
+<?php require 'Controller/verificationsMontants.php' ?>
 
 <?php $this->titre = 'Opérations' ?>
 
@@ -29,13 +29,13 @@
                 <!-- Affichage du montant de l'opération dans crédit ou débit -->
                 <?php if ($operation['nature_operation'] === 'D') { ?>
 
-                    <td>- <?= ($operation['montant_operation']) ?> €</td>
+                    <td>- <?= deuxDecimales($operation['montant_operation']) ?> €</td>
                     <td></td>
 
                 <?php } else { ?>
 
                     <td></td>
-                    <td>+ <?= ($operation['montant_operation']) ?> €</td>
+                    <td>+ <?= deuxDecimales($operation['montant_operation']) ?> €</td>
 
                 <?php } ?>
 
