@@ -54,6 +54,7 @@ class Routeur {
                         //S'il n'y a pas d'inputs vides, AJOUT D'UNE OPERATION
                         if (!$erreur) {
                             $this->ctrlAddOperation->addOperation($_POST);
+                            header("location: index.php?action=AddOperation");
                         } else {
                             $this->ctrlAddOperation->addOperation();
                         }
@@ -77,6 +78,11 @@ class Routeur {
                         }
 
                         break;
+                        
+                    //Affichage Chart.js
+                    case 'Chart':
+                        
+                        require_once 'View/vueChart.php';
 
                     //Affichage de la liste des opérations par défaut
                     default:

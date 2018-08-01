@@ -1,5 +1,9 @@
 <?php $this->titre = 'Ajout opération' ?>
 
+<div class="alert alert-danger" role="alert">
+    <?= 'lol' ?>
+</div>
+
 <!-- Formulaire d'ajout d'une opération -->
 <form method="POST" id="addOperation"></form>
 

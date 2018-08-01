@@ -28,9 +28,12 @@ class ControllerAddOperation {
         $categories = $this->categories->getCategorieOperation();
         $comptes    = $this->comptes->getCompteBancaire();
 
+        $msg = '';
+
         //addOperation() est appelé uniquement s'il y a un paramètre
         if (isset($data)) {
             $this->operation->addOperation($data);
+            $msg = 'L\'opération a bien été ajoutée.';
         }
 
         $vue = new Vue("AddOperation");

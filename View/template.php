@@ -25,12 +25,19 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?action=GetOperations">Opérations <!--<span class="sr-only">(current)</span>--></a>
                             </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?action=AddOperation">Ajout opération</a>
                             </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php?action=Chart">Statistiques</a>
+                            </li>
+                            
                         </ul>
                     </div>
                 </nav>
@@ -48,6 +55,9 @@
 
         </div> <!-- #global -->
 
+        <!-- JS Chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
         <!-- JS Bootstrap -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
