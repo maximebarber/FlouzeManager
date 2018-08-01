@@ -20,16 +20,17 @@ class ControllerAddType {
         //addTypeOperation() est appelé uniquement s'il y a un paramètre
         if ($data != null) {
             //Récupération des inputs de manière sécurisé
-            $type = e(capsLower($data['addType']));
+            $type = escape(capsLower($data));
 
             if(empty($type)){
-                $msg =  "Type vide.";
+                $msg = "non";
             }
             else {
                 $type = $this->type->addTypeOperation($data);
-                $msg = "ok";
+                $msg = "oui";
             }
         }
+
     }
 
 }

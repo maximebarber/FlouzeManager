@@ -40,31 +40,23 @@ class Routeur {
                     //Affichage formulaire ajout d'une opération
                     case 'AddOperation':
 
-                        //Vérification inputs vides
-                        $inputs = ['date', 'libelle', 'montant', 'type', 'categorie', 'compte', 'nature'];
-
-                        $erreur = false;
-
-                        foreach ($inputs as $input) {
-                            if (empty($_POST[$input])) {
-                                $erreur = true;
-                            }
-                        }
-
                         //S'il n'y a pas d'inputs vides, AJOUT D'UNE OPERATION
-                        if ($erreur) {
+                        if (!empty($_POST['date']) && !empty($_POST['libelle']) && !empty($_POST['montant']) && !empty($_POST['nature'])) {
                             $this->ctrlAddOperation->addOperation($_POST);
-                            $_POST = array();
+                            //$_POST = array();
                         } else {
                             $this->ctrlAddOperation->addOperation();
-                            $_POST = array();
+                            //$_POST = array();
                         }
 
                         //AJOUT D'UN TYPE
                         if (!empty($_POST['addType'])) {
                             $nom_type_operation = $_POST['addType'];
                             $this->ctrlAddType->addTypeOperation($nom_type_operation);
-                            header("location: index.php?action=AddOperation");
+
+                            //actualise la page actuelle
+                            echo "<meta http-equiv='refresh' content='0'>";
+
                         } else {
                             $this->ctrlAddType->addTypeOperation();
                         }
@@ -73,7 +65,9 @@ class Routeur {
                         if (!empty($_POST['addCategorie'])) {
                             $nom_categorie_operation = $_POST['addCategorie'];
                             $this->ctrlAddCategorie->addCategorieOperation($nom_categorie_operation);
-                            header("location: index.php?action=AddOperation");
+
+                            //actualise la page actuelle
+                            echo "<meta http-equiv='refresh' content='0'>";
                         } else {
                             $this->ctrlAddCategorie->addCategorieOperation();
                         }
