@@ -16,6 +16,7 @@ class ModelType extends Model {
         return $types;
     }
     
+    //Ajout d'un type dans la BDD
     function addTypeOperation($nom_type_operation) {
         
         $sql = "INSERT INTO TYPE_OPERATION (nom_type_operation) "

@@ -17,7 +17,7 @@
 
     <!-- Champ montant -->
     <div class="form-group input-group">
-        <input type="number" step="any" class="form-control" placeholder="Montant de l'opération" name="montant" form="addOperation">
+        <input type="number"class="form-control" placeholder="Montant de l'opération" name="montant" form="addOperation">
         <div class="input-group-append">
             <span class="input-group-text" id="basic-addon2">€</span>
         </div>
@@ -36,6 +36,7 @@
         </select>
     </div>
 
+    <!-- Affichage formulaire ajouter un type -->
     <?php require 'vueAddType.php' ?>
 
     <!-- Liste déroulante catégories -->
@@ -50,6 +51,9 @@
 
         </select>
     </div>
+
+    <!-- Affichage formulaire ajouter une catégorie -->
+    <?php require 'vueAddCategorie.php' ?>
 
     <!-- Liste déroulante comptes bancaires -->
     <div class="form-group">
