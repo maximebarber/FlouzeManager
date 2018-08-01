@@ -15,5 +15,18 @@ class ModelType extends Model {
 
         return $types;
     }
+    
+    function addTypeOperation($nom_type_operation) {
+        
+        $sql = "INSERT INTO TYPE_OPERATION (nom_type_operation) "
+             . "VALUES (:nom_type_operation)";
+        $type = $this->bdd->prepare($sql);
+        
+        $type->execute([
+            'nom_type_operation' => $nom_type_operation
+        ]);
+        
+        return $type;
+    }
 
 }
