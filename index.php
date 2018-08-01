@@ -9,5 +9,3 @@ require 'Controller/Routeur.php';
 //Initialize le routeur
 $routeur = new Routeur();
 $routeur->routerRequete();
-
-var_dump($_POST);

@@ -25,19 +25,19 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?action=GetOperations">Opérations <!--<span class="sr-only">(current)</span>--></a>
                             </li>
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?action=AddOperation">Ajout opération</a>
                             </li>
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link disabled" href="#">Statistiques (à venir)</a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </nav>
@@ -50,7 +50,7 @@
 
             <!-- Footer -->
             <footer id="footer">
-                Flouze Manager &#xA9; Site réalisé avec beaucoup d'argent par Maxime Barber
+                <br><p>Flouze Manager &#xA9; Site réalisé avec beaucoup d'argent par Maxime Barber</p>
             </footer>
 
         </div> <!-- #global -->

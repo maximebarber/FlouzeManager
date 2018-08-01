@@ -23,11 +23,9 @@ class ControllerAddType {
             $type = escape(capsLower($data));
 
             if(empty($type)){
-                $msg = "non";
             }
             else {
                 $type = $this->type->addTypeOperation($data);
-                $msg = "oui";
             }
         }
 

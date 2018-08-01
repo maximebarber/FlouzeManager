@@ -2,7 +2,7 @@
 
 <?php $this->titre = 'Opérations' ?>
 
-<h5>Solde Courant : <?= $solde; ?> €</h5>
+<h5>Solde Courant : <?= $solde; ?> €</h5><br>
 
 <!-- Affiche le récapitulaif des opérations -->
 <div class="table-responsive">

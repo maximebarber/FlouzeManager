@@ -2,8 +2,21 @@
     margin: 2% 5%;
 }
 
+#global {
+    margin: auto;
+}
+
+#contenu {
+    max-width: 800px;
+    margin: 5% auto;
+}
+
+h5 {
+    text-align: center;
+}
+
 /* FOOTER */
 
 #footer {
-    text-align: center;
+  text-align: center;
 }
