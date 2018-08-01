@@ -21,20 +21,20 @@ class ControllerAddOperation {
         $this->comptes    = new ModelCompteBancaire();
     }
 
-    //Affichage des opérations et du solde courant
+    //Ajout d'une opération
     public function addOperation($data = null) {
 
-        //$operation      = $this->operation->addOperation();
         $types      = $this->types->getTypeOperation();
         $categories = $this->categories->getCategorieOperation();
         $comptes    = $this->comptes->getCompteBancaire();
 
+        //addOperation() est appelé uniquement s'il y a un paramètre
         if (isset($data)) {
             $this->operation->addOperation($data);
         }
 
         $vue = new Vue("AddOperation");
-        $vue->generer(array(/* 'operation' => $operation, */'types' => $types, 'categories' => $categories, 'comptes' => $comptes));
+        $vue->generer(array('types' => $types, 'categories' => $categories, 'comptes' => $comptes));
     }
 
 }

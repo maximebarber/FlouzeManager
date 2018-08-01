@@ -1,9 +1,5 @@
 <?php $this->titre = 'Opérations' ?>
 
-<?php //ob_start(); ?>
-
-<!-- Affiche le solde courant -->
-
 <h3>Solde Courant : <?= $solde; ?> €</h3>
 
 <!-- Affiche le récapitulaif des opérations -->
@@ -46,7 +42,3 @@
     <?php endforeach; ?>
 
 </table>
-
-<?php //$contenu = ob_get_clean(); ?>
-
-<?php //require 'View/template.php'; ?>

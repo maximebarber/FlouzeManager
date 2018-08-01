@@ -1,7 +1,5 @@
 <?php $this->titre = 'Ajout opération' ?>
 
-<?php //ob_start(); ?>
-
 <!-- Formulaire d'ajout d'une opération -->
 <form method="POST">
 
@@ -81,7 +79,3 @@
     <button type="submit" class="btn btn-primary">Valider</button>
 
 </form>
-
-<?php //$contenu = ob_get_clean(); ?>
-
-<?php //require 'View/template.php'; ?>

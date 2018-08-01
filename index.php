@@ -6,6 +6,7 @@ error_reporting(E_ALL | E_STRICT);
 
 require 'Controller/Routeur.php';
 
+//Initialize le routeur
 $routeur = new Routeur();
 $routeur->routerRequete();
 
