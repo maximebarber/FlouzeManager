@@ -43,14 +43,18 @@ class ControllerAddOperation {
             $fixe      = e($data['fixe']);
 
             //ERREUR SI CHAMP VIDE
-            if (empty($_POST['date']) || empty($_POST['libelle']) ||
-                empty($_POST['montant']) || empty($_POST['type']) ||
-                empty($_POST['categorie']) || empty($_POST['compte']) ||
-                empty($_POST['nature'])) {
+            if (empty($date) || empty($libelle) ||
+                empty($montant) || empty($type) ||
+                empty($categorie) || empty($compte) ||
+                empty($nature)) {
 
                 $msg = "Veuillez renseigner tous les champs.";
             }
-            //addOperation() est appelé uniquement s'il y a un paramètre
+
+            //ERREUR SI INTITULE COMPORTE CARACTERES SPECIAUX OU NE FAIT PAS LE BON NOMBRE DE CARACTERES
+
+
+            //SINON ON AJOUTE L'OPERATION
             else {
                 $this->operation->addOperation($data);
                 $msg = 'L\'opération a bien été ajoutée.';
