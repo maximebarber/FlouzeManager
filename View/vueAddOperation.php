@@ -1,8 +1,6 @@
 <?php $this->titre = 'Ajout opération' ?>
 
-<div class="alert alert-danger" role="alert">
-    <?= $msg; ?>
-</div>
+<?= $msg; ?>
 
 <!-- Formulaire d'ajout d'une opération -->
 <form method="POST" id="addOperation"></form>
@@ -31,7 +29,7 @@
     <!-- Liste déroulante types -->
     <div class="form-group">
         <label for="type">Type</label>
-        <select class="form-control" id="type" name="id_type" form="addOperation">
+        <select class="form-control" id="type" name="id_type" form="addOperation" required>
 
             <!-- Récupère les données de chaque TYPE sous forme d'une liste déroulante -->
             <?php foreach ($types as $type): ?>
@@ -47,7 +45,7 @@
     <!-- Liste déroulante catégories -->
     <div class="form-group">
         <label for="categorie">Catégorie</label>
-        <select class="form-control" id="categorie" name="id_categorie" form="addOperation">
+        <select class="form-control" id="categorie" name="id_categorie" form="addOperation" required>
 
             <!-- Récupère les données de chaque CATEGORIE sous forme d'une liste déroulante -->
             <?php foreach ($categories as $categorie): ?>
@@ -63,7 +61,7 @@
     <!-- Liste déroulante comptes bancaires -->
     <div class="form-group">
         <label for="categorie">Compte Bancaire</label>
-        <select class="form-control" id="categorie" name="id_compte_bancaire" form="addOperation">
+        <select class="form-control" id="categorie" name="id_compte_bancaire" form="addOperation" required>
 
             <!-- Récupère les données de chaque COMPTE BANCAIRE sous forme d'une liste déroulante -->
             <?php foreach ($comptes as $compte): ?>

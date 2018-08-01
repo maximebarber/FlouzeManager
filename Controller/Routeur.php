@@ -54,10 +54,10 @@ class Routeur {
                         //S'il n'y a pas d'inputs vides, AJOUT D'UNE OPERATION
                         if ($erreur) {
                             $this->ctrlAddOperation->addOperation($_POST);
-                            echo "ja";
+                            $_POST = array();
                         } else {
                             $this->ctrlAddOperation->addOperation();
-                            echo "nein";
+                            $_POST = array();
                         }
 
                         //AJOUT D'UN TYPE

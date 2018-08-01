@@ -33,34 +33,35 @@ class ControllerAddOperation {
 
         if ($data != null) {
             //Récupération des inputs de manière sécurisé
-            $date      = e($data['date']);
-            $libelle   = e($data['libelle']);
-            $montant   = e($data['montant']);
-            $type      = e($data['id_type']);
-            $categorie = e($data['id_categorie']);
-            $compte    = e($data['id_compte_bancaire']);
-            $nature    = e(capsUpper($data['nature']));
-            $fixe      = e($data['fixe']);
+            $data = array(
+            'date'      => e($data['date']),
+            'libelle'   => e(capsLower($data['libelle'])),
+            'montant'   => e(deuxDecimales($data['montant'])),
+            'type'      => e($data['id_type']),
+            'categorie' => e($data['id_categorie']),
+            'compte'    => e($data['id_compte_bancaire']),
+            'nature'    => e(capsUpper($data['nature'])),
+            'fixe'      => e($data['fixe']));
 
             //ERREUR SI CHAMP VIDE
-            if (empty($date) || empty($libelle) ||
-                empty($montant) || empty($type) ||
-                empty($categorie) || empty($compte) ||
-                empty($nature)) {
+            if (empty($data['date']) || empty($data['libelle']) ||
+                empty($data['montant']) || empty($data['type']) ||
+                empty($data['categorie']) || empty($data['compte']) ||
+                empty($data['nature'])) {
 
-                $msg = "Veuillez renseigner tous les champs.";
+                $msg = '<div class="alert alert-danger" role="alert"><p>Veuillez renseigner tous les champs.<p></div>';
             }
 
             //ERREUR SI INTITULE COMPORTE CARACTERES SPECIAUX OU NE FAIT PAS LE BON NOMBRE DE CARACTERES
-            else if (!preg_match("#^[a-zéèàêâùïüëçA-Z]{3,50}$#", $libelle)) {
+            else if (!preg_match("#^[a-zéèàêâùïüëçA-Z]{3,50}$#", $data['libelle'])) {
                 //header('Location: index.php?action=AddOperation');
-                $msg = "Le libellé ne doit pas contenir de caractères spéciaux.";
+                $msg = '<div class="alert alert-danger" role="alert"><p>Le libellé ne doit pas contenir de caractères spéciaux.<p></div>';
             }
 
             //SINON ON AJOUTE L'OPERATION
             else {
                 $this->operation->addOperation($data);
-                $msg = 'L\'opération a bien été ajoutée.';
+                $msg = '<div class="alert alert-success" role="alert"><p>L\'opération a bien été ajoutée.<p></div>';
             }
         }
 

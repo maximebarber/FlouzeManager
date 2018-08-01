@@ -16,6 +16,6 @@ function capsUpper($value){
 }
 
 //FONCTION PERMETTANT D'ARRONDIR A DEUX CHIFFRES APRES LA VIRGULE
-function deuxDeciamles($nombre) {
+function deuxDecimales($nombre) {
     return number_format((float)$nombre, 2, '.', '');
 }

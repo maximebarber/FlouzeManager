@@ -57,11 +57,11 @@ class ModelOperation extends Model {
         $operation->execute([
             ':date'               => $data['date'],
             ':libelle'            => $data['libelle'],
-            ':id_type'            => $data['id_type'],
-            ':id_categorie'       => $data['id_categorie'],
+            ':id_type'            => $data['type'],
+            ':id_categorie'       => $data['categorie'],
             ':montant'            => $data['montant'],
             ':nature'             => $data['nature'],
-            ':id_compte_bancaire' => $data['id_compte_bancaire'],
+            ':id_compte_bancaire' => $data['compte'],
             ':fixe'               => $data['fixe']]);
 
         return $operation;

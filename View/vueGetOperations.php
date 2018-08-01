@@ -29,13 +29,13 @@
                 <!-- Affichage du montant de l'opération dans crédit ou débit -->
                 <?php if ($operation['nature_operation'] === 'D') { ?>
 
-                    <td>- <?= deuxDeciamles($operation['montant_operation']) ?> €</td>
+                    <td>- <?= ($operation['montant_operation']) ?> €</td>
                     <td></td>
 
                 <?php } else { ?>
 
                     <td></td>
-                    <td>+ <?= deuxDeciamles($operation['montant_operation']) ?> €</td>
+                    <td>+ <?= ($operation['montant_operation']) ?> €</td>
 
                 <?php } ?>
 
