@@ -29,6 +29,10 @@ class ControllerAddOperation {
         $categories = $this->categories->getCategorieOperation();
         $comptes    = $this->comptes->getCompteBancaire();
 
+        if (isset($data)) {
+            $this->operation->addOperation($data);
+        }
+
         $vue = new Vue("AddOperation");
         $vue->generer(array(/* 'operation' => $operation, */'types' => $types, 'categories' => $categories, 'comptes' => $comptes));
     }

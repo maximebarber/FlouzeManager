@@ -24,9 +24,11 @@ class Routeur {
                         $this->ctrlOperation->operations();
                         break;
                     case 'AddOperation':
-                        if (isset($data)) {
-                            $this->operation->addOperation($_POST);
-                        } else {$this->ctrlAddOperation->addOperation();}
+                        if (!empty($_POST)) {
+                            $this->ctrlAddOperation->addOperation($_POST);
+                        } else {
+                            $this->ctrlAddOperation->addOperation();
+                        }
                         break;
                     default:
                         $this->ctrlOperation->operations();
@@ -37,7 +39,7 @@ class Routeur {
             else
                 $this->ctrlOperation->operations();
 
-        //Affichage page d'erreur
+            //Affichage page d'erreur
         } catch (Exception $e) {
             $this->erreur($e->getMessage());
         }
