@@ -3,7 +3,7 @@
 <?= $msg; ?>
 
 <!-- Formulaire d'ajout d'une opération -->
-<form method="POST" id="addOperation"></form>
+<form method="POST" id="addOperation" action="index.php?action=AddOperation"></form>
 
 <div class="form">
 

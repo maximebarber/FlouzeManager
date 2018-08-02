@@ -68,6 +68,7 @@ class Routeur {
 
                             //actualise la page actuelle
                             echo "<meta http-equiv='refresh' content='0'>";
+                            
                         } else {
                             $this->ctrlAddCategorie->addCategorieOperation();
                         }

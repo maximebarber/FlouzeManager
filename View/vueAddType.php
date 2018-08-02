@@ -16,7 +16,7 @@
             <div class="modal-body">
 
                 <!-- Formulaire ajout type -->
-                <form method="POST" id="formType"></form>
+                <form method="POST" id="formType" action="index.php?action=AddOperation"></form>
 
                 <!-- Champ addType -->
                 <div class="form-group">
