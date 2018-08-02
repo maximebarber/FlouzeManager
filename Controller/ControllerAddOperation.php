@@ -53,7 +53,7 @@ class ControllerAddOperation {
             }
 
             //ERREUR SI INTITULE COMPORTE CARACTERES SPECIAUX OU NE FAIT PAS LE BON NOMBRE DE CARACTERES
-            else if (!preg_match("#^[a-zéèàêâùïüëçA-Z]{3,50}$#", $data['libelle'])) {
+            else if (!preg_match("#^[a-zéèàêâùïüëçA-Z\s'-]{3,50}$#", $data['libelle'])) {
                 //header('Location: index.php?action=AddOperation');
                 $msg = '<div class="alert alert-danger" role="alert"><p>Le libellé ne doit pas contenir de caractères spéciaux.<p></div>';
             }

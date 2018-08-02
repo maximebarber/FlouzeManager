@@ -14,7 +14,7 @@
 
     <!-- Champ libellé -->
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Libellé de l'opération" name="libelle" form="addOperation" pattern="^[a-zéèàêâùïüëçA-Z]{3,50}$" required>
+        <input type="text" class="form-control" placeholder="Libellé de l'opération" name="libelle" form="addOperation" pattern="^[a-zéèàêâùïüëçA-Z\s'-]{3,50}$" required>
         <small>Pas de caractères spéciaux. Entre 3 et 50 caractères.</small>
     </div>
 
