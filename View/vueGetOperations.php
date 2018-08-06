@@ -2,7 +2,8 @@
 
 <?php $this->titre = 'Opérations' ?>
 
-<h5>Solde Courant : <?= $solde; ?> €</h5><br>
+<?php $numCompte = $operations->fetch();?>
+<h5>Solde Courant : <?= $solde; ?> € du compte <?= $numCompte['numero_compte_bancaire'] ?></h5><br>
 
 <!-- Affiche le récapitulaif des opérations -->
 <div class="table-responsive">
@@ -42,7 +43,6 @@
             </tr>
 
         <?php endforeach; ?>
-        <?php $_GET['id'] ?>
 
     </table>
 </div>

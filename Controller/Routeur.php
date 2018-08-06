@@ -20,7 +20,7 @@ class Routeur {
         $this->ctrlAddOperation = new ControllerAddOperation();
         $this->ctrlAddType      = new ControllerAddType();
         $this->ctrlAddCategorie = new ControllerAddCategorie();
-        $this->ctrlCB = new ControllerCB();
+        $this->ctrlCB           = new ControllerCB();
     }
 
     public function routerRequete() {
@@ -37,12 +37,17 @@ class Routeur {
                     //Affichage liste des opérations
                     case 'GetOperations':
 
-                        $this->ctrlOperation->operations();
+                        if (isset($_GET['idCB'])) {
+
+                            $this->ctrlOperation->operations($_GET['idCB']);
+                        } else {
+                            $this->ctrlAddOperation->addOperation();
+                        }
                         break;
-                    
+
                     //Affichage liste comptes bancaires
                     case 'GetCB':
-                        
+
                         $this->ctrlCB->getCB();
                         break;
 
@@ -65,7 +70,6 @@ class Routeur {
 
                             //actualise la page actuelle
                             echo "<meta http-equiv='refresh' content='0'>";
-
                         } else {
                             $this->ctrlAddType->addTypeOperation();
                         }
@@ -77,7 +81,6 @@ class Routeur {
 
                             //actualise la page actuelle
                             echo "<meta http-equiv='refresh' content='0'>";
-                            
                         } else {
                             $this->ctrlAddCategorie->addCategorieOperation();
                         }
@@ -92,13 +95,13 @@ class Routeur {
                     //Affichage de la liste des opérations par défaut
                     default:
 
-                        $this->ctrlOperation->operations();
+                        $this->ctrlAddOperation->addOperation();
                         break;
                 }
             }
             //Sinon s'il n'y a pas d'action définie
             else
-                $this->ctrlOperation->operations();
+                $this->ctrlAddOperation->addOperation();
 
             //Affichage page d'erreur
         } catch (Exception $e) {

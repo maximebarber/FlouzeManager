@@ -15,7 +15,7 @@
             <tr>
 
                 <td><?= $compte['num'] ?></td>
-                <td><a href="index.php?action=GetOperations&amp;id=<?= $compte['id'] ?>">Détails...</a></td>
+                <td><a href="index.php?action=GetOperations&amp;idCB=<?= $compte['id'] ?>">Détails...</a></td>
 
             </tr>
 

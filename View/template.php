@@ -27,16 +27,16 @@
                         <ul class="navbar-nav">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action=GetOperations">Opérations <!--<span class="sr-only">(current)</span>--></a>
+                                <a class="nav-link" href="index.php?action=GetCB">Comptes Bancaires <!--<span class="sr-only">(current)</span>--></a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?action=AddOperation">Ajout opération</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Statistiques (à venir)</a>
-                            </li>
+                            <!--                             <li class="nav-item">
+                                                            <a class="nav-link disabled" href="#">Statistiques (à venir)</a>
+                                                        </li> -->
 
                         </ul>
                     </div>

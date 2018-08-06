@@ -15,9 +15,9 @@ class ControllerOperation {
     }
 
     //Affichage des opérations et du solde courant
-    public function operations() {
+    public function operations($idCB) {
         
-        $operations = $this->operations->getOperations();
+        $operations = $this->operations->getOperations($idCB);
         $solde      = $this->solde->soldeCourant();
         
         $vue        = new Vue("GetOperations");
