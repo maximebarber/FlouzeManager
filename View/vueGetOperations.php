@@ -2,8 +2,11 @@
 
 <?php $this->titre = 'Opérations' ?>
 
-<?php $numCompte = $operations->fetch();?>
-<h5>Solde Courant : <?= $solde; ?> € du compte <?= $numCompte['numero_compte_bancaire'] ?></h5><br>
+<?php //$numCompte   = $operations->fetch(); ?>
+<h5>Solde Courant : <?= $solde; ?> € du compte <?php //$numCompte['numero_compte_bancaire'] ?></h5><br>
+
+<a class="waves-effect waves-light btn">Recettes</a>
+<a class="waves-effect waves-light btn">Dépenses</a>
 
 <!-- Affiche le récapitulaif des opérations -->
 <div class="table-responsive">
@@ -43,6 +46,14 @@
             </tr>
 
         <?php endforeach; ?>
+        <?php //$operations->closeCursor(); ?>
 
     </table>
 </div>
+
+<?php foreach ($credits as $credit): ?>
+
+    <?= $credit['montant_operation']; ?>
+
+<?php endforeach; ?>
+

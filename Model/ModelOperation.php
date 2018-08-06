@@ -21,10 +21,11 @@ class ModelOperation extends Model {
     }
 
     //Affiche le solde courant de tous les comptes
-    function soldeCourant() {
+    public function soldeCourant($idCB) {
         //Récupère les données permettant de calculer le solde courant
-        $sql      = "SELECT montant_operation, nature_operation FROM OPERATION";
-        $montants = $this->bdd->query($sql);
+        $sql      = "SELECT montant_operation, nature_operation, id_compte_bancaire FROM OPERATION WHERE id_compte_bancaire = :id";
+        $montants = $this->bdd->prepare($sql);
+        $montants->execute(array(':id' => $idCB));
 
         //Calcul du solde courant
 
@@ -49,8 +50,17 @@ class ModelOperation extends Model {
         return $solde;
     }
 
+    public function getCredit($idCB) {
+        $sql     = "select `o`.`montant_operation` AS `montant_operation`,`o`.`nature_operation` AS `nature_operation`,`o`.`date_operation` AS `date_operation`,`o`.`libelle_operation` AS `libelle_operation`,`t`.`nom_type_operation` AS `nom_type_operation`,`c`.`nom_categorie_operation` AS `nom_categorie_operation`,`o`.`id_compte_bancaire` AS `id_compte_bancaire` from ((`maxime_gestion_budget`.`OPERATION` `o` join `maxime_gestion_budget`.`TYPE_OPERATION` `t`) join `maxime_gestion_budget`.`CATEGORIE_OPERATION` `c`) where ((`o`.`id_type_operation` = `t`.`id_type_operation`) and (`o`.`id_categorie_operation` = `c`.`id_categorie_operation`) and (`o`.`nature_operation` = 'C') and (`o`.`id_compte_bancaire` = :id))";
+        $credits = $this->bdd->prepare($sql);
+        $credits->execute(array(':id' => $idCB));
+
+        //Retourne les résultats
+        return $credits;
+    }
+
     //Insère une opération dans la BDD
-    function addOperation($data = null) {
+    public function addOperation($data = null) {
         $sql       = "INSERT INTO OPERATION (date_operation, libelle_operation, id_type_operation, id_categorie_operation, montant_operation, nature_operation, id_compte_bancaire, fixe_operation)"
                 . "VALUES (:date, :libelle, :id_type, :id_categorie, :montant, :nature, :id_compte_bancaire, :fixe)";
         $operation = $this->bdd->prepare($sql);
