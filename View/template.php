@@ -50,7 +50,7 @@
 
             <!-- Footer -->
             <footer id="footer">
-                <br><p>Flouze Manager &#xA9; Site réalisé avec beaucoup d'argent par Maxime Barber</p>
+                <br><hr><p>Flouze Manager &#xA9; Site réalisé avec beaucoup d'argent par Maxime Barber</p>
             </footer>
 
         </div> <!-- #global -->

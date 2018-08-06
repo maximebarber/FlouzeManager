@@ -4,6 +4,7 @@ require_once 'ControllerOperation.php';
 require_once 'ControllerAddOperation.php';
 require_once 'ControllerAddType.php';
 require_once 'ControllerAddCategorie.php';
+require_once 'ControllerCB.php';
 require_once 'View/Vue.php';
 
 class Routeur {
@@ -12,12 +13,14 @@ class Routeur {
     private $ctrlAddOperation;
     private $ctrlAddType;
     private $ctrlAddCategorie;
+    private $ctrlCB;
 
     public function __construct() {
         $this->ctrlOperation    = new ControllerOperation();
         $this->ctrlAddOperation = new ControllerAddOperation();
         $this->ctrlAddType      = new ControllerAddType();
         $this->ctrlAddCategorie = new ControllerAddCategorie();
+        $this->ctrlCB = new ControllerCB();
     }
 
     public function routerRequete() {
@@ -35,6 +38,12 @@ class Routeur {
                     case 'GetOperations':
 
                         $this->ctrlOperation->operations();
+                        break;
+                    
+                    //Affichage liste comptes bancaires
+                    case 'GetCB':
+                        
+                        $this->ctrlCB->getCB();
                         break;
 
                     //Affichage formulaire ajout d'une opération

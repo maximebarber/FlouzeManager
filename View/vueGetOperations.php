@@ -42,6 +42,7 @@
             </tr>
 
         <?php endforeach; ?>
+        <?php $_GET['id'] ?>
 
     </table>
 </div>
